@@ -19,7 +19,7 @@ app.use(express.static("public"));
 //Routes to get and set information
 require("./routes/htmlRoutes.js")(app,path);
 //future route to get and send infromaiton from 
-//require("./routes/apiRoutes.js")(app);
+require("./routes/apiRoutes.js")(app);
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workout",{ useNewUrlParser: true });

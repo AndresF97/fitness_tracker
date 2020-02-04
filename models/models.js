@@ -5,7 +5,10 @@ const Schema = monogoose.Schema;
 
 
 const WorkoutSchema = new Schema({
-    date: Date,
+    date:{ 
+    type:Date,
+    default:Date.new,
+    },
     exercises:[
         {
         type: String,
