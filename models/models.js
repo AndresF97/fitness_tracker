@@ -4,15 +4,19 @@ const Schema = monogoose.Schema;
 
 
 
-const workoutSchema = new Schema({
+const WorkoutSchema = new Schema({
     date: Date,
     exercises:[
         {
         type: String,
         name:String,
+        trim:true,
         duration:{
             type:Number
         },
+        weight:Number,
+        reps:Number,
+        sets:Number,
         distance:{
             type:Number
         }
@@ -20,6 +24,6 @@ const workoutSchema = new Schema({
 ]
 })
 
-const workOut = monogoose.model("workout",workoutSchema);
+const Workout = monogoose.model("Workout",WorkoutSchema);
 
-module.exports = workOut;
+module.exports = Workout;
