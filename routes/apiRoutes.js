@@ -3,7 +3,7 @@ var db = require("../models/index.js")
 
 //exporting the api routes 
 module.exports = function(app){
-    //shows all of the workouts as objects
+    //Get routes
     app.get("/api/workouts",function(req,res){
         db.Workout.find({})
         .then(function(result){
@@ -13,20 +13,11 @@ module.exports = function(app){
             res.json(error)
         })
     })
-    app.get("/api/workouts",function(req,res){
-        db.exercises.find({})
-        .then(function(result){
-            res.json(result)
-        })
-        .catch(function(error){
-            res.json(error)
-        })
-    })
+    //post routes to make workouts
     app.post("/api/workouts",function({body},res){
         console.log(body)
-        db.Workout.create(body)
+        db.exercises.create(body)
         .then((result)=>{
-            //console.log(res.json(result))
             res.json(result)
         })
         .catch((error)=>{
@@ -44,8 +35,15 @@ module.exports = function(app){
             res.json(error)
         })
     })
-    // app.post("api/works/exercise?id",function({body},res){
-    //     var chosen = req.params
-    // })
+    //Get routs to get the info from the table
+    app.get("api/works/stats",function({body},res){
+        db.exercises.find({})
+        .then(function(result){
+            res.json(result)
+        })
+        .catch(function(error){
+            res.json(error)
+        })
+    })
 }
 

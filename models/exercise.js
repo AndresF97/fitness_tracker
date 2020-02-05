@@ -13,10 +13,18 @@ const exercisesSchema = new Schema({
         duration:{
             type:Number
         },
-        weight:Number,
-        reps:Number,
-        sets:Number,
-        distance:Number
+        weight:{
+            type:Number
+        },
+        reps:{
+            type:Number
+        },
+        sets:{
+            type:Number
+        },
+        distance:{
+            type:Number
+        }
     },
 ]
 })
