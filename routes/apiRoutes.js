@@ -36,7 +36,7 @@ module.exports = function(app){
         })
     })
     //Get routs to get the info from the table
-    app.get("api/works/stats",function({body},res){
+    app.get("api/works/stats",function(req,res){
         db.exercises.find({})
         .then(function(result){
             res.json(result)
