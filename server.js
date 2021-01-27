@@ -22,7 +22,7 @@ require("./routes/htmlRoutes.js")(app,path);
 require("./routes/apiRoutes.js")(app);
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:Campeon11@ds031567.mlab.com:31567/heroku_xqrkqjf5",{ useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workout",{ useNewUrlParser: true });
 
 //setting upp seeds to populate the db
 

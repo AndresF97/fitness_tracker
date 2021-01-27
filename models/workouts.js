@@ -6,14 +6,14 @@ const Schema = monogoose.Schema;
 
 const WorkoutSchema = new Schema({
     date:{ 
-    type:Date,
-    default:new Date,
+    type: Date,
+    default:Date.now,
     },
     exercises:[
         {
         type:Schema.Types.ObjectId,
         ref:"exercises"
-    },
+    }
 ]
 })
 

@@ -6,14 +6,15 @@ module.exports = function(app){
     //Get routes
     app.get("/api/workouts",function(req,res){
         db.Workout.find({})
-        .then(function(result){
+        .then(result =>{
             res.json(result)
+            console.log(result)
         })
         .catch(function(error){
             res.json(error)
         })
     })
-    //post routes to make workouts
+    // //post routes to make workouts
     app.post("/api/workouts",function({body},res){
         console.log(body)
         db.exercises.create(body)
@@ -35,15 +36,15 @@ module.exports = function(app){
             res.json(error)
         })
     })
-    //Get routs to get the info from the table
-    app.get("api/works/stats",function(req,res){
-        db.exercises.find({})
-        .then(function(result){
-            res.json(result)
-        })
-        .catch(function(error){
-            res.json(error)
-        })
-    })
+    // //Get routs to get the info from the table
+    // app.get("api/works/stats",function(req,res){
+    //     db.exercises.find({})
+    //     .then(function(result){
+    //         res.json(result)
+    //     })
+    //     .catch(function(error){
+    //         res.json(error)
+    //     })
+    // })
 }
 
