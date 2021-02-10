@@ -5,10 +5,10 @@ var db = require("../models/index.js")
 module.exports = function(app){
     //Get routes
     app.get("/api/workouts",function(req,res){
-        db.Workout.find({})
+        db.Workout.find()
         .then(result =>{
             res.json(result)
-            console.log(result)
+            console.log(result[0].exercises)
         })
         .catch(function(error){
             res.json(error)
